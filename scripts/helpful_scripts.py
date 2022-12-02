@@ -1,8 +1,7 @@
 from brownie import (
     accounts,
     config,
-    network,
-    Contract,
+    network
 )
 
 FORKED_LOCAL_ENV = ["mainnet-fork", "mainnet-fork-dev"]
@@ -24,17 +23,3 @@ def get_account(index=None, id=None):
     else:
         return accounts.add(config["wallets"]["from_key"])
 
-
-# def deploy_mocks():
-#     print(f"The active network is {network.show_active()}")
-#     print("Deploying mocks")
-#     account = get_account()
-#     # MockV3Aggregator.deploy(DECIMALS, STARTING_PRICE, {"from": account})
-#     # print("MockV3Agg... Deployed")
-#     # print("Deploying Mock Dai")
-#     coin_token = CoinToken.deploy({"from": account})
-#     (f"Mock coin deployed to {coin_token.address}")
-
-#     # print("Deploying Mock Weth")
-#     # weth_token = MockWeth.deploy({"from": account})
-#     # print(f"Mock weth deployed to {weth_token.address}")
